@@ -1,3 +1,12 @@
+<script>
+import Hero from '../components/Hero.vue';
+
+export default {
+    components: {
+        Hero
+    },
+};
+</script>
 <template>
-  <h2>HelloWorld</h2>
+  <Hero/>
 </template>

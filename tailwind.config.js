@@ -26,6 +26,10 @@ module.exports = {
           '"Lora"',
           '-apple-system',
         ],
+        body: [
+          '"Lora"',
+          '-apple-system',
+        ],
       },
     },
     variants: {
