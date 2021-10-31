@@ -1,7 +1,6 @@
 {
   "name": "nartygdanskpl",
   "version": "0.0.0",
-  "homepage": "https://aleksanderwalczuk.github.io/nartygdansk/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
