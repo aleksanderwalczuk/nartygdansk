@@ -14,18 +14,18 @@ export default {
 }
 </script>
 <template>
-  <section class="py-12">
+  <section class="section pt-6" id="main">
     <div class="container px-4 flex flex-col lg:flex-col-reverse justify-center items-center">
       <div class="image-wrapper">
         <img src="https://via.placeholder.com/500x300" alt="" class="max-w-full mx-auto object-cover">
       </div>
       <div class="content">
-        <div class="w-full">
-          <h2 class="text-4xl font-sans">{{ title }}</h2>
+        <div class="w-full py-4">
+          <h2 class="text-4xl font-sans text-red-500 mb-8">{{ title }}</h2>
           <p class="">{{ subtitle }}</p>
         </div>
-        <div class="flex justify-center items-center">Otwarte od...</div>
-        <button class="block px-16 py-4 border border-red-500 mx-auto">Zadzwoń</button>
+        <div class="flex justify-center items-center mb-4">Otwarte od...</div>
+        <button class="block px-16 py-4 border border-red-500 mx-auto lg:mb-8">Zadzwoń</button>
       </div>
     </div>
   </section>

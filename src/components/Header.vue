@@ -11,17 +11,20 @@ export default {
 }
 </script>
 <template>
-  <header class="page-header">
-    <div class="container flex justify-between items-center px-4 min-h-[56px]">
-      <div class="logo">
-        <h1 class="font-sans">
-          <router-link to="/nartygdansk">nartygdansk.pl</router-link>
-        </h1>
-      </div>
-      <div class="links">
-        <a href="#" class>Home</a>
-        <a :href="phoneNumber">Zadzwoń teraz</a>
-        <a :href="mapUrl" target="blank">Wyznacz trasę</a>
+  <header class="page-header pt-14">
+    <div class="px-4 flex items-center w-full min-h-[56px] fixed top-0 left-0 shadow-md bg-white">
+      <div class="container flex justify-between items-center">
+        <div class="logo">
+          <h1 class="font-sans">
+            <a href="#app" v-smooth-scroll>nartygdansk.pl</a>
+          </h1>
+        </div>
+        <div class="links">
+          <a href="#news" v-smooth-scroll>Aktualności</a>
+          <a href="#terms" v-smooth-scroll>Komis</a>
+          <a href="#contact" v-smooth-scroll>Kontakt</a>
+          <a :href="mapUrl" target="blank" class="btn">Wyznacz trasę</a>
+        </div>
       </div>
     </div>
   </header>
@@ -29,7 +32,7 @@ export default {
 
 <style lang="scss" scoped>
 .page-header {
-  @apply shadow-md;
+  @apply relative;
 }
 .logo {
   @apply text-2xl text-red-500;

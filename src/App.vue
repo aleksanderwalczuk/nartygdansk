@@ -24,4 +24,10 @@ import Header from './components/Header.vue';
   max-width: 1180px;
   margin: 0 auto;
 }
+.section {
+  @apply py-12;
+}
+.section-title {
+  @apply font-sans text-3xl text-center mb-8;
+}
 </style>
