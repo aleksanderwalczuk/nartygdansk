@@ -1,13 +1,15 @@
 <script>
+import Hamburger from "./Hamburger.vue"
 
 
 export default {
-  data() {
-    return {
-      mapUrl: 'https://www.google.com/maps/dir//nartygdansk.pl/data=!4m8!4m7!1m0!1m5!1m1!1s0x46fd0ac835ce2f91:0x6ef6191e630f3f6d!2m2!1d18.5607063!2d54.418360899999996',
-      phoneNumber: 'tel:' + '004800000000'
-    }
-  }
+    data() {
+        return {
+            mapUrl: "https://www.google.com/maps/dir//nartygdansk.pl/data=!4m8!4m7!1m0!1m5!1m1!1s0x46fd0ac835ce2f91:0x6ef6191e630f3f6d!2m2!1d18.5607063!2d54.418360899999996",
+            phoneNumber: "tel:" + "004800000000"
+        };
+    },
+    components: { Hamburger }
 }
 </script>
 <template>
@@ -25,6 +27,7 @@ export default {
           <a href="#contact" v-smooth-scroll>Kontakt</a>
           <a :href="mapUrl" target="blank" class="btn">Wyznacz trasę</a>
         </div>
+        <Hamburger/>
       </div>
     </div>
   </header>

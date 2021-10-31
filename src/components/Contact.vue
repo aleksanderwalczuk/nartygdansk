@@ -17,12 +17,12 @@ export default {
 
 </script>
 <template>
-  <footer class="section" id="contact">
+  <footer class="section pb-0" id="contact">
     <div class="container px-4">
       <h2 class="section-title">Kontakt</h2>
       <div class="content">
         <img :src="MapImage" alt="bussines location on google maps" class="block object-fill" />
-        <div class="flex my-4">
+        <div class="flex flex-col md:flex-row my-4">
           <div class="item md:w-1/4">
             <h3 class="footer-heading">Kontakt:</h3>
             <ul class="mb-4 flex-grow">
@@ -51,14 +51,14 @@ export default {
           </div>
           <div class="item md:w-1/4">
             <h3 class="footer-heading">Godziny otwarcia:</h3>
-            <div class="flex">
+            <div class="flex flex-col md:flex-row">
               <ul>
                 <li>Pon.: Zamknięte</li>
                 <li>Wt.:</li>
                 <li>Śr.:</li>
                 <li>Czw.:</li>
               </ul>
-              <ul class="ml-4">
+              <ul class="md:ml-6">
                 <li>Pt.:</li>
                 <li>Sb.:</li>
                 <li>Nd.: Zamknięte</li>
@@ -67,12 +67,19 @@ export default {
           </div>
         </div>
       </div>
+      <span class="block text-right">
+        &copy;
+        <a href="https://nartygdansk.pl" class="font-serif text-xs pr-4">nartygdansk.pl</a>
+      </span>
     </div>
   </footer>
 </template>
 <style lang="scss" scoped>
 .item {
-  @apply flex flex-col;
+  @apply flex flex-col mb-4;
+}
+.item:last-child {
+  @apply mb-0;
 }
 .footer-heading {
   @apply font-serif text-lg font-semibold mt-4 mb-2;
