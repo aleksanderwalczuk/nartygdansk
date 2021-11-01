@@ -12,6 +12,9 @@ jobs:
   build:
     name: "Build nartygdansk application"
     runs-on: ubuntu-latest
+    env:
+      VITE_APP_CMS_DATOCMS_API_TOKEN: ${{ secrets.VITE_APP_CMS_DATOCMS_API_TOKEN }}
+      VITE_MODE: ${{ secrets.VITE_MODE }}
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
@@ -19,7 +22,10 @@ jobs:
         with:
           node-version: 14.x
       - run: npm ci
-      - run: npm run build
+      - name: Build
+        run: |
+          npm install
+          VITE_APP_CMS_DATOCMS_API_TOKEN=${{ secrets.VITE_APP_CMS_DATOCMS_API_TOKEN }} npm run build
       - uses: actions/upload-artifact@v1
         name: Upload build as artifact
         if: always()
@@ -28,6 +34,9 @@ jobs:
           path: ./dist
   deploy-on-github-pages:
     name: "Deploy app to GitHub Pages from master branch source code"
+    env:
+      VITE_APP_CMS_DATOCMS_API_TOKEN: ${{ secrets.VITE_APP_CMS_DATOCMS_API_TOKEN }}
+      VITE_MODE: ${{ secrets.VITE_MODE }}
     if: github.ref == 'refs/heads/master'
     needs: build
     runs-on: ubuntu-latest

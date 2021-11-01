@@ -19,7 +19,7 @@ export default {
 </script>
 <template>
   <section class="section pt-6" id="main">
-    <div class="container px-4 flex flex-col lg:flex-col-reverse justify-center items-center">
+    <div v-if="section" class="container px-4 flex flex-col lg:flex-col-reverse justify-center items-center">
       <div class="image-wrapper">
         <img :src="section.heroImg.responsiveImage.src" :srcset="section.heroImg.responsiveImage.srcSet" :alt="section.heroImg.alt" class="max-w-full mx-auto object-cover">
       </div>
