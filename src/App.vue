@@ -1,14 +1,12 @@
 <script setup>
 import Header from './components/Header.vue';
 import Home from './views/Home.vue';
-import { provide } from '@vue/runtime-core';
+import Loader from './components/Loader.vue';
 
 import { request } from "./datocms";
 import { onMounted, reactive } from "vue";
 import { ALL_IN_ONE_QUERY } from './Queries';
 import Store from './store'
-
-
 
 onMounted(async () => {
   const data = await request({
@@ -22,7 +20,7 @@ onMounted(async () => {
 
 <template>
   <Header />
-  <transition name="fade" :duration="{ enter: 1500, leave: 800 }">
+  <transition name="fade" :duration="{ enter: 500, leave: 800 }">
     <div v-if="Store.state.loaded" class="wrapper">
       <Home />
     </div>
@@ -48,11 +46,13 @@ onMounted(async () => {
   @apply font-sans text-3xl text-center mb-8;
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s ease;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
 }
 
-.fade-enter-from, .fade-leave-to {
+.fade-enter-from,
+.fade-leave-to {
   opacity: 0;
 }
 </style>

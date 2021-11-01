@@ -73,10 +73,13 @@ export const ALL_IN_ONE_QUERY = `query AllInOne {
     subtitle
     heroImg {
       alt
-      responsiveImage {
+      responsiveImage (imgixParams: {fit: fillmax}){
         src
         srcSet
         alt
+        sizes
+        width
+        height
       }
     }
   }

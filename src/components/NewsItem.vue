@@ -22,7 +22,7 @@ export default {
 }
 </script>
 <template>
-  <figure class="shadow-sm rounded-lg border p-4 mb-12 md:w-1/3">
+  <figure class="shadow-sm rounded-lg border p-4 mb-12 md:w-1/3 max-w-xs">
     <datocms-image :data="data.image.responsiveImage" class="max-h-[150px]" />
     <h3 v-if="data.title" class="font-sans text-lg mt-2 mb-1">{{ data.title }}</h3>
     <figcaption>

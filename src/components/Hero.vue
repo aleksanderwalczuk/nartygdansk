@@ -41,7 +41,7 @@ export default {
       v-if="section"
       class="container px-4 flex flex-col lg:flex-col-reverse justify-center items-center"
     >
-      <div class="image-wrapper">
+      <div class="image-wrapper px-4">
         <datocms-image
           :data="section.heroImg.responsiveImage"
           class="max-w-full mx-auto object-cover"
