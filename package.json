@@ -11,6 +11,7 @@
     "graphql-request": "^3.6.1",
     "vite-plugin-fonts": "^0.2.2",
     "vue": "^3.2.16",
+    "vue-datocms": "^1.0.5",
     "vue-router": "^4.0.12",
     "vue3-smooth-scroll": "^0.8.1"
   },

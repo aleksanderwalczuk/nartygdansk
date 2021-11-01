@@ -18,16 +18,15 @@ onMounted(async () => {
   Store.setData(data)
 });
 
-
-
-
 </script>
 
 <template>
   <Header />
-  <div v-if="Store.state.loaded" class="wrapper">
-    <Home />
-  </div>
+  <transition name="fade" :duration="{ enter: 1500, leave: 800 }">
+    <div v-if="Store.state.loaded" class="wrapper">
+      <Home />
+    </div>
+  </transition>
 </template>
 
 <style>
@@ -36,7 +35,7 @@ onMounted(async () => {
   -moz-osx-font-smoothing: grayscale;
 }
 .wrapper {
-  @apply flex flex-col min-h-screen font-serif;
+  @apply flex flex-col min-h-screen font-serif pt-6;
 }
 .container {
   max-width: 1180px;
@@ -47,5 +46,13 @@ onMounted(async () => {
 }
 .section-title {
   @apply font-sans text-3xl text-center mb-8;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s ease;
+}
+
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
 }
 </style>

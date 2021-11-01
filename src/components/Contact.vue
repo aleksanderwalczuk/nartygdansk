@@ -1,10 +1,13 @@
 <script>
 import MapImage from '../assets/staticmap.jpeg';
+import Store from '../store'
 
 export default {
   name: 'Contact',
   data() {
     return {
+      section: '',
+      closedMessage: 'Zamknięte',
       MapImage,
       form: {
         name: '',
@@ -12,6 +15,9 @@ export default {
         message: ''
       },
     }
+  },
+  mounted() {
+    this.section = Store.getData('info')
   },
 }
 
@@ -53,15 +59,15 @@ export default {
             <h3 class="footer-heading">Godziny otwarcia:</h3>
             <div class="flex flex-col md:flex-row">
               <ul>
-                <li>Pon.: Zamknięte</li>
-                <li>Wt.:</li>
-                <li>Śr.:</li>
-                <li>Czw.:</li>
+                <li>pon.: {{ section.hoursMonday || closedMessage }}</li>
+                <li>wt.: {{ section.hoursTuesday || closedMessage }}</li>
+                <li>śr.: {{ section.hoursWednesday || closedMessage }}</li>
+                <li>czw.: {{ section.hoursThursday || closedMessage }}</li>
               </ul>
               <ul class="md:ml-6">
-                <li>Pt.:</li>
-                <li>Sb.:</li>
-                <li>Nd.: Zamknięte</li>
+                <li>pt.: {{ section.hoursFriday || closedMessage }}</li>
+                <li>sob.: {{ section.hoursSaturday || closedMessage }}</li>
+                <li>niedz.: {{ section.hoursSunday || closedMessage }}</li>
               </ul>
             </div>
           </div>

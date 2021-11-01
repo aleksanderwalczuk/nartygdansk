@@ -14,7 +14,9 @@ const store = {
     }
 
     this.state.data = newValue
-    this.state.loaded = true
+    setTimeout(function(){
+      this.state.loaded = true
+    }.bind(this), 1000)
   },
 
   getData(entry) {
@@ -35,6 +37,10 @@ const store = {
     }
 
     this.state.data = null
+  },
+
+  toggle(item) {
+    return !item
   },
 
   toggleLoaded() {
