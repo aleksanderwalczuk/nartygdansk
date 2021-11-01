@@ -1,13 +1,32 @@
 <script setup>
 import Header from './components/Header.vue';
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
+import Home from './views/Home.vue';
+import { provide } from '@vue/runtime-core';
+
+import { request } from "./datocms";
+import { onMounted, reactive } from "vue";
+import { ALL_IN_ONE_QUERY } from './Queries';
+import Store from './store'
+
+
+
+onMounted(async () => {
+  const data = await request({
+    query: ALL_IN_ONE_QUERY,
+    variables: { limit: 3 },
+  });
+  Store.setData(data)
+});
+
+
+
 
 </script>
 
 <template>
   <Header />
-  <div class="wrapper">
-    <router-view/>
+  <div v-if="Store.state.loaded" class="wrapper">
+    <Home />
   </div>
 </template>
 

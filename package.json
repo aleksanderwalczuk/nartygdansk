@@ -7,6 +7,8 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "graphql": "^16.0.0",
+    "graphql-request": "^3.6.1",
     "vite-plugin-fonts": "^0.2.2",
     "vue": "^3.2.16",
     "vue-router": "^4.0.12",

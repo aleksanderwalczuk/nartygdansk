@@ -5,7 +5,10 @@ import NewsItem from '../components/NewsItem.vue';
 import Terms from '../components/Terms.vue';
 import Contact from '../components/Contact.vue';
 
+import Store from '../store';
+
 export default {
+
   components: {
     Hero,
     News,
@@ -23,7 +26,7 @@ export default {
     <NewsItem />
   </News>
   <hr />
-  <Terms/>
+  <Terms />
   <hr />
   <Contact class="mt-12" />
 </template>
