@@ -1,7 +1,7 @@
 <script>
 import { computed } from '@vue/reactivity'
 import Modal from './Modal.vue'
-import toggleScrollLock from '../helpers/ScrollLock';
+import Store from '../store';
 
 export default {
   props: ["news"],
@@ -25,10 +25,9 @@ export default {
   },
   methods: {
     toggle() {
-        console.log("toggled");
-        this.open = !this.open;
-        toggleScrollLock();
-      }
+      this.open = !this.open;
+      Store.toggleScrollLock();
+    }
   }
 }
 </script>
@@ -47,7 +46,7 @@ export default {
         <h3 class="font-sans text-lg">{{ fetched.title }}</h3>
       </template>
       <template v-slot:body>
-        <datocms-image :data="fetched.image.responsiveImage" class="max-h-[150px]" />
+        <datocms-image :data="fetched.image.responsiveImage" class="max-h-[250px]" />
         <div class="font-serif mt-4">
           <div v-html="fetched.content"></div>
         </div>

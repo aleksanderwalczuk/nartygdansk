@@ -64,9 +64,7 @@ export const ALL_IN_ONE_QUERY = `query AllInOne {
     street
   }
   term {
-    conditions {
-      value
-    }
+    terms
   }
   hero {
     title

@@ -1,12 +1,13 @@
 import { reactive } from '@vue/reactivity'
 
 const store = {
-  debug: true,
+  debug: false,
 
   state: reactive({
     data: null,
     loaded: false,
     modalOpen: false,
+    scrollLocked: false,
   }),
 
   setData(newValue) {
@@ -50,6 +51,22 @@ const store = {
 
   toggleLoaded() {
     this.loaded =  !this.loaded
+  },
+
+  toggleScrollLock(debug) {
+    if (debug) {
+      console.log('toggleScrollLockAction triggered')
+    }
+    if (document) {
+      const body = document.querySelector("body");
+      if (this.state.scrollLocked) {
+        body.style.overflow = "auto";
+        this.state.scrollLocked = false;
+      } else {
+        body.style.overflow = "hidden";
+        this.state.scrollLocked = true;
+      }
+    }
   }
 }
 
