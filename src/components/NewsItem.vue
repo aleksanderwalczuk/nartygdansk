@@ -42,7 +42,7 @@ export default {
     </figcaption>
   </figure>
   <teleport to="#modals" :disabled="!open">
-    <Modal :onOpen="open" :="">
+    <Modal :onOpen="open" :toggle="toggle.bind(this)">
       <template v-slot:header>
         <h3 class="font-sans text-lg">{{ fetched.title }}</h3>
       </template>

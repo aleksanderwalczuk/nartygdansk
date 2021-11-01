@@ -6,8 +6,8 @@ export default {
       type: Boolean,
       default: false
     },
-    data: {
-      type: Object,
+    toggle: {
+      type: Function,
       default: () => ({})
     },
   },
@@ -23,7 +23,7 @@ export default {
       <div class="modal-content">
         <div class="modal-header">
           <slot name="header" />
-          <button class="modal-btn" @click="$emit('open = false')">
+          <button class="modal-btn" @click="toggle">
             <span class="line" />
             <span class="line" />
           </button>

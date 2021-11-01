@@ -24,7 +24,7 @@ export default {
       </div>
       <div class="content">
         <template v-for="post in posts">
-          <NewsItem v-if="post" :fetched="post" />
+          <NewsItem v-if="post" :fetched="post" :key="post.id" />
         </template>
       </div>
       <button class="block text-center mx-auto">Załaduj więcej</button>
