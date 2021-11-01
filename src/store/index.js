@@ -6,6 +6,7 @@ const store = {
   state: reactive({
     data: null,
     loaded: false,
+    modalOpen: false,
   }),
 
   setData(newValue) {
@@ -39,8 +40,12 @@ const store = {
     this.state.data = null
   },
 
-  toggle(item) {
-    return !item
+  setModalOpen() {
+    if (this.debug) {
+      console.log('setModalOpenAction triggered')
+    }
+    this.state.modalOpen = true;
+    this.toggleScrollLock()
   },
 
   toggleLoaded() {

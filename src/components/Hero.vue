@@ -17,11 +17,9 @@ export default {
         const weekday = dateObj.toLocaleString("default", { weekday: "long" })
         const closedMessage = 'Zamknięte'
         if (query) {
-          const [isOpened] = Object
+          const [[day, message]] = Object
             .entries(query)
             .filter(([key, value]) => key.toLocaleLowerCase().includes(weekday.toLocaleLowerCase()))
-          const [day, message] = isOpened
-          console.log(weekday)
 
           return message.includes(closedMessage) ? message : `Otwarte ${message}`
         }

@@ -1,33 +1,60 @@
 <script>
 import { computed } from '@vue/reactivity'
+import Modal from './Modal.vue'
+import toggleScrollLock from '../helpers/ScrollLock';
 
 export default {
-  props: ['news'],
+  props: ["news"],
+  components: {
+    Modal
+  },
   data() {
     return {
-      show: false,
-      show_text: 'Show',
-      title: 'Post title',
+      open: false,
+      title: "Post title",
       exerpt: computed(() => {
-        return this.data.content.substring(0, 40) + '...'
+        return this.fetched.content.substring(0, 40) + "...";
       })
-    }
+    };
   },
   props: {
-    data: {
+    fetched: {
       type: Object,
       required: true
     }
+  },
+  methods: {
+    toggle() {
+        console.log("toggled");
+        this.open = !this.open;
+        toggleScrollLock();
+      }
   }
 }
 </script>
 <template>
   <figure class="shadow-sm rounded-lg border p-4 mb-12 md:w-1/3 max-w-xs">
-    <datocms-image :data="data.image.responsiveImage" class="max-h-[150px]" />
-    <h3 v-if="data.title" class="font-sans text-lg mt-2 mb-1">{{ data.title }}</h3>
+    <datocms-image :data="fetched.image.responsiveImage" class="max-h-[150px]" />
+    <h3 v-if="fetched.title" class="font-sans text-lg mt-2 mb-1">{{ fetched.title }}</h3>
     <figcaption>
       {{ exerpt }}
-      <a href="#" class="block text-red-500">Czytaj&nbsp;więcej</a>
+      <button to="#modals" @click="toggle" class="block text-red-500">Czytaj&nbsp;więcej</button>
     </figcaption>
   </figure>
+  <teleport to="#modals" :disabled="!open">
+    <Modal :onOpen="open" :="">
+      <template v-slot:header>
+        <h3 class="font-sans text-lg">{{ fetched.title }}</h3>
+      </template>
+      <template v-slot:body>
+        <datocms-image :data="fetched.image.responsiveImage" class="max-h-[150px]" />
+        <div class="font-serif mt-4">
+          <div v-html="fetched.content"></div>
+        </div>
+      </template>
+    </Modal>
+  </teleport>
 </template>
+
+<style scoped>
+</style>

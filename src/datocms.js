@@ -7,8 +7,6 @@ export function request({ query, variables, preview }) {
     : `https://graphql.datocms.com/`;
     let token;
     token = DATO
-  console.log('current token:', token)
-  console.log('currentMode', MODE)
   const client = new GraphQLClient(endpoint, {
     headers: {
       'Content-Type': `application/json`,
