@@ -137,7 +137,7 @@ $nav_height: 54px;
 }
 
 .navigation {
-  @apply bg-gray-50 w-full h-full absolute left-0 pt-16 pb-10;
+  @apply bg-white w-full h-full absolute left-0 pt-16 pb-10;
   height: calc(100vh - #{$nav_height} - 1px);
   top: calc(#{$nav_height} + 1px);
   visibility: hidden;

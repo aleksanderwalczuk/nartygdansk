@@ -31,19 +31,22 @@ export const INFO_QUERY = `query info {
 `
 
 export const ALL_IN_ONE_QUERY = `query AllInOne {
-  allPosts {
+  allPosts(first: "3") {
     id
     content
     title
     visible
     publishDate
     image {
-      alt
-      id
-      url
-      responsiveImage {
+      responsiveImage(imgixParams: {crop: focalpoint, h: "300", w: "300"}) {
         sizes
+        src
         srcSet
+        height
+        title
+        webpSrcSet
+        width
+        alt
       }
     }
   }
@@ -67,6 +70,7 @@ export const ALL_IN_ONE_QUERY = `query AllInOne {
   }
   hero {
     title
+    subtitle
     heroImg {
       alt
       responsiveImage {

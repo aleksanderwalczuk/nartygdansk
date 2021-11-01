@@ -29,7 +29,7 @@ export default {
       <div class="content">
         <img :src="MapImage" alt="bussines location on google maps" class="block object-fill" />
         <div class="flex flex-col md:flex-row my-4">
-          <div class="item md:w-1/4">
+          <div class="item md:w-1/3 lg:w-1/4">
             <h3 class="footer-heading">Kontakt:</h3>
             <ul class="mb-4 flex-grow">
               <li>
@@ -44,9 +44,9 @@ export default {
             </ul>
             <a href class="btn">Zadzwoń teraz</a>
           </div>
-          <div class="item md:w-1/4">
+          <div class="item md:w-1/3 lg:w-1/4">
             <h3 class="footer-heading">Adres:</h3>
-            <address class="flex flex-col mb-4">
+            <address class="flex flex-col mb-4 not-italic flex-grow">
               <span>Kazimierza Górskiego 1</span>
               <span>80-336 Gdańsk</span>
               <span>Polska</span>
@@ -55,7 +55,7 @@ export default {
               href="https://www.google.com/maps/dir//nartygdansk.pl/data=!4m8!4m7!1m0!1m5!1m1!1s0x46fd0ac835ce2f91:0x6ef6191e630f3f6d!2m2!1d18.5607063!2d54.418360899999996"
             >Wyznacz trasę</a>
           </div>
-          <div class="item md:w-1/4">
+          <div class="item md:w-1/3 lg:w-1/4">
             <h3 class="footer-heading">Godziny otwarcia:</h3>
             <div class="flex flex-col md:flex-row">
               <ul>

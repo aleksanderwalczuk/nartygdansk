@@ -31,7 +31,6 @@ export default {
   },
   mounted() {
     this.section = Store.getData('hero')
-    console.log(this.section)
 
   },
 }
@@ -51,7 +50,7 @@ export default {
       <div class="content">
         <div class="w-full py-4">
           <h2 class="text-4xl font-sans text-red-500 mb-8">{{ section.title }}</h2>
-          <p class>{{ 'subtitle' }}</p>
+          <p class>{{ section.subtitle }}</p>
         </div>
         <div class="flex justify-center items-center mb-4">{{ isTodayOpen }}</div>
         <button class="block px-16 py-4 border border-red-500 mx-auto lg:mb-8">Zadzwoń</button>
