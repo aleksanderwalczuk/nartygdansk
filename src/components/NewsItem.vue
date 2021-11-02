@@ -59,7 +59,9 @@ export default {
 .news-item {
   @apply shadow-sm rounded-lg border p-4 mb-12 md:w-1/3;
 }
-.news-item:nth-child(odd) {
-  @apply mx-4;
+@screen md {
+  .news-item:nth-child(odd) {
+    @apply mx-4;
+  }
 }
 </style>
