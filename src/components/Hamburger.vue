@@ -63,9 +63,9 @@ $light: #ffffff;
 $nav_height: 54px;
 
 @mixin hamburger-line {
-  @apply bg-red-600;
+  @apply bg-red-500;
   width: 100%;
-  height: 2px;
+  height: 3px;
   position: absolute;
 }
 
