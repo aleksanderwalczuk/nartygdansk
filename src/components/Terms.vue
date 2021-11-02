@@ -48,7 +48,7 @@ export default {
     @apply text-xl;
   }
   .rendered-content ol {
-    @apply list-decimal;
+    @apply list-decimal pl-6;
   }
   .rendered-content strong,b {
     @apply font-semibold;

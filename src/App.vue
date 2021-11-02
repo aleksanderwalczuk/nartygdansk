@@ -55,4 +55,10 @@ onMounted(async () => {
 .fade-leave-to {
   opacity: 0;
 }
+.btn {
+  @apply bg-red-500 text-lg font-serif text-white py-2 px-4 rounded border border-red-400 transition-colors duration-300 hover:bg-red-400;
+}
+.btn-lg {
+  @apply px-8;
+}
 </style>

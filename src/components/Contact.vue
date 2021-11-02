@@ -7,7 +7,7 @@ export default {
   data() {
     return {
       section: '',
-      closedMessage: 'Zamknięte',
+      closedMessage: 'Dziś zamknięte',
       MapImage,
       form: {
         name: '',
@@ -42,7 +42,7 @@ export default {
               </li>
               <li></li>
             </ul>
-            <a href class="btn">Zadzwoń teraz</a>
+            <a href class="btn self-start">Zadzwoń teraz</a>
           </div>
           <div class="item md:w-1/3 lg:w-1/4">
             <h3 class="footer-heading">Adres:</h3>
@@ -53,6 +53,7 @@ export default {
             </address>
             <a
               href="https://www.google.com/maps/dir//nartygdansk.pl/data=!4m8!4m7!1m0!1m5!1m1!1s0x46fd0ac835ce2f91:0x6ef6191e630f3f6d!2m2!1d18.5607063!2d54.418360899999996"
+              class="btn self-start"
             >Wyznacz trasę</a>
           </div>
           <div class="item md:w-1/3 lg:w-1/4">

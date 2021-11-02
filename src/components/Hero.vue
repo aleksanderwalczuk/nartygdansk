@@ -15,13 +15,13 @@ export default {
         const query = Store.getData('info')
         const dateObj = new Date();
         const weekday = dateObj.toLocaleString("default", { weekday: "long" })
-        const closedMessage = 'Zamknięte'
+        const closedMessage = 'zamknięte.'
         if (query) {
           const [[day, message]] = Object
             .entries(query)
             .filter(([key, value]) => key.toLocaleLowerCase().includes(weekday.toLocaleLowerCase()))
 
-          return message.includes(closedMessage) ? message : `Otwarte ${message}`
+          return message.includes(closedMessage) ? 'Dziś' + message.toLocaleLowerCase() : `Otwarte ${message}`
         }
         return ''
       })
@@ -51,7 +51,7 @@ export default {
           <p class>{{ section.subtitle }}</p>
         </div>
         <div class="flex justify-center items-center mb-4">{{ isTodayOpen }}</div>
-        <button class="block px-16 py-4 border border-red-500 mx-auto lg:mb-8">Zadzwoń</button>
+        <a href="tel:508485690" class="btn btn-lg mx-auto lg:mb-8">Zadzwoń</a>
       </div>
     </div>
   </section>

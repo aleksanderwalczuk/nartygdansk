@@ -18,7 +18,7 @@ export default {
 }
 </script>
 <template>
-  <div v-if="onOpen" class="modal">
+  <div v-if="onOpen" class="modal" @click.self="toggle">
     <div class="modal-wrapper">
       <div class="modal-content">
         <div class="modal-header">

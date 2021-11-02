@@ -49,4 +49,7 @@ export default {
 .links a:last-child {
   @apply mr-0;
 }
+.links .btn {
+  @apply text-white;
+}
 </style>
