@@ -32,7 +32,7 @@ export default {
 }
 </script>
 <template>
-  <figure class="shadow-sm rounded-lg border p-4 mb-12 md:w-1/3 max-w-[300px] mx-auto" @click.self="toggle">
+  <figure class="news-item max-w-[300px] mx-auto" @click.self="toggle">
     <datocms-image :data="fetched.image.responsiveImage" class="max-h-[150px]" />
     <h3 v-if="fetched.title" class="font-sans text-lg mt-2 mb-1">{{ fetched.title }}</h3>
     <figcaption>
@@ -56,4 +56,10 @@ export default {
 </template>
 
 <style scoped>
+.news-item {
+  @apply shadow-sm rounded-lg border p-4 mb-12 md:w-1/3;
+}
+.news-item:nth-child(odd) {
+  @apply mx-4;
+}
 </style>

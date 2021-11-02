@@ -21,7 +21,7 @@ export default {
             .entries(query)
             .filter(([key, value]) => key.toLocaleLowerCase().includes(weekday.toLocaleLowerCase()))
 
-          return message.includes(closedMessage) ? 'Dziś' + message.toLocaleLowerCase() : `Otwarte ${message}`
+          return message.includes(closedMessage) ? 'Dziś' + message.toLocaleLowerCase() : `Dziś otwarte ${message}`
         }
         return ''
       })

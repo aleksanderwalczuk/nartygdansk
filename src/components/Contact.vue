@@ -9,11 +9,7 @@ export default {
       section: '',
       closedMessage: 'Dziś zamknięte',
       MapImage,
-      form: {
-        name: '',
-        email: '',
-        message: ''
-      },
+      mapIsOpen: false,
     }
   },
   mounted() {
@@ -27,21 +23,52 @@ export default {
     <div class="container px-4">
       <h2 class="section-title">Kontakt</h2>
       <div class="content">
-        <img :src="MapImage" alt="bussines location on google maps" class="block object-fill" />
+        <img
+          :src="MapImage"
+          alt="bussines location on google maps"
+          class="block object-fill"
+          @click="mapIsOpen = true"
+        />
+        <vue-easy-lightbox
+          @hide="mapIsOpen = false"
+          :visible="mapIsOpen"
+          :imgs="MapImage"
+          :caption="'Kazimierza Górskiego 1'"
+          alt="bussines location on google maps"
+        />
         <div class="flex flex-col md:flex-row my-4">
           <div class="item md:w-1/3 lg:w-1/4 mb-0">
             <h3 class="footer-heading">Godziny otwarcia:</h3>
             <div class="flex flex-col md:flex-row">
               <ul>
-                <li><span class="day">pon.:</span> {{ section.hoursMonday || closedMessage }}</li>
-                <li><span class="day">wt.:</span> {{ section.hoursTuesday || closedMessage }}</li>
-                <li><span class="day">śr.:</span> {{ section.hoursWednesday || closedMessage }}</li>
-                <li><span class="day">czw.:</span> {{ section.hoursThursday || closedMessage }}</li>
-              <!-- </ul> -->
-              <!-- <ul class="md:ml-6"> -->
-                <li><span class="day">pt.:</span> {{ section.hoursFriday || closedMessage }}</li>
-                <li><span class="day">sob.:</span> {{ section.hoursSaturday || closedMessage }}</li>
-                <li><span class="day">niedz.:</span> {{ section.hoursSunday || closedMessage }}</li>
+                <li>
+                  <span class="day">pon.:</span>
+                  {{ section.hoursMonday || closedMessage }}
+                </li>
+                <li>
+                  <span class="day">wt.:</span>
+                  {{ section.hoursTuesday || closedMessage }}
+                </li>
+                <li>
+                  <span class="day">śr.:</span>
+                  {{ section.hoursWednesday || closedMessage }}
+                </li>
+                <li>
+                  <span class="day">czw.:</span>
+                  {{ section.hoursThursday || closedMessage }}
+                </li>
+                <li>
+                  <span class="day">pt.:</span>
+                  {{ section.hoursFriday || closedMessage }}
+                </li>
+                <li>
+                  <span class="day">sob.:</span>
+                  {{ section.hoursSaturday || closedMessage }}
+                </li>
+                <li>
+                  <span class="day">niedz.:</span>
+                  {{ section.hoursSunday || closedMessage }}
+                </li>
               </ul>
             </div>
           </div>
@@ -75,7 +102,7 @@ export default {
       </div>
       <span class="block text-right">
         &copy;
-        <a href="https://nartygdansk.pl" class="font-serif text-xs pr-4">nartygdansk.pl</a>
+        <a href="https://nartygdansk.pl" class="font-serif text-xs">nartygdansk.pl</a>
       </span>
     </div>
   </footer>

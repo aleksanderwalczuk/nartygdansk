@@ -14,8 +14,8 @@ export default {
 </script>
 <template>
   <header class="page-header pt-14">
-    <div class="px-4 flex items-center w-full min-h-[56px] fixed top-0 left-0 shadow-md bg-white z-20">
-      <div class="container flex justify-between items-center">
+    <div class="flex items-center w-full min-h-[56px] fixed top-0 left-0 shadow-md bg-white z-20">
+      <div class="container flex justify-between items-center px-4">
         <div class="logo">
           <h1 class="font-sans">
             <a href="#app" v-smooth-scroll>nartygdansk.pl</a>

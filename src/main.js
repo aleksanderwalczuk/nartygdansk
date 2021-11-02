@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import VueSmoothScroll from 'vue3-smooth-scroll'
 import { DatocmsImagePlugin } from "vue-datocms";
+import VueEasyLightbox from 'vue-easy-lightbox'
 
 import './index.css'
 
@@ -14,4 +15,5 @@ createApp(App)
     easing: 'easeInOutQuart',
   })
   .use(DatocmsImagePlugin)
+  .use(VueEasyLightbox)
   .mount('#app')

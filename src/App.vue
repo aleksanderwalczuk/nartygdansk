@@ -4,7 +4,7 @@ import Home from './views/Home.vue';
 import Loader from './components/Loader.vue';
 
 import { request } from "./datocms";
-import { onMounted, reactive } from "vue";
+import { onMounted } from "vue";
 import { ALL_IN_ONE_QUERY } from './Queries';
 import Store from './store'
 
