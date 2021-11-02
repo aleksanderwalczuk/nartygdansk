@@ -44,14 +44,14 @@ export default {
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
 }
+.modal-wrapper {
+  @apply w-full h-full p-4 rounded-lg border border-gray-300 bg-white relative overflow-auto;
+}
 .modal-header {
   @apply w-full mt-8 mb-2;
 }
 .modal-btn {
   @apply absolute right-0 top-0 p-2 m-2 min-w-[20px];
-}
-.modal-wrapper {
-  @apply w-full h-full p-4 rounded-lg border border-gray-300 bg-white relative;
 }
 .line {
   @apply absolute top-1/2 left-0 block h-[2px] w-full min-w-[20px] bg-black transform -rotate-45 max-w-[20px];
