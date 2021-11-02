@@ -37,7 +37,7 @@ export default {
   <section class="section pt-0" id="main">
     <div
       v-if="section"
-      class="container px-4 flex flex-col lg:flex-col-reverse justify-center items-center"
+      class="container px-4 flex flex-col justify-center items-center"
     >
       <div class="image-wrapper px-4">
         <datocms-image
@@ -62,6 +62,6 @@ export default {
   @apply -mx-4;
 }
 .content {
-  @apply mt-4 text-center;
+  @apply mt-4 text-center md:mt-0 md:py-4;
 }
 </style>

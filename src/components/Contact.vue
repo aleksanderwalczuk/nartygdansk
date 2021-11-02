@@ -29,18 +29,33 @@ export default {
       <div class="content">
         <img :src="MapImage" alt="bussines location on google maps" class="block object-fill" />
         <div class="flex flex-col md:flex-row my-4">
+          <div class="item md:w-1/3 lg:w-1/4 mb-0">
+            <h3 class="footer-heading">Godziny otwarcia:</h3>
+            <div class="flex flex-col md:flex-row">
+              <ul>
+                <li><span class="day">pon.:</span> {{ section.hoursMonday || closedMessage }}</li>
+                <li><span class="day">wt.:</span> {{ section.hoursTuesday || closedMessage }}</li>
+                <li><span class="day">śr.:</span> {{ section.hoursWednesday || closedMessage }}</li>
+                <li><span class="day">czw.:</span> {{ section.hoursThursday || closedMessage }}</li>
+              <!-- </ul> -->
+              <!-- <ul class="md:ml-6"> -->
+                <li><span class="day">pt.:</span> {{ section.hoursFriday || closedMessage }}</li>
+                <li><span class="day">sob.:</span> {{ section.hoursSaturday || closedMessage }}</li>
+                <li><span class="day">niedz.:</span> {{ section.hoursSunday || closedMessage }}</li>
+              </ul>
+            </div>
+          </div>
           <div class="item md:w-1/3 lg:w-1/4">
             <h3 class="footer-heading">Kontakt:</h3>
             <ul class="mb-4 flex-grow">
               <li>
-                tel:
+                tel:&nbsp;
                 <a href="tel:0048000000000">508 485 690</a>
               </li>
               <li>
-                tel:
+                tel:&nbsp;
                 <a href="tel:0048000000000">58 554 72 07</a>
               </li>
-              <li></li>
             </ul>
             <a href class="btn self-start">Zadzwoń teraz</a>
           </div>
@@ -56,22 +71,6 @@ export default {
               class="btn self-start"
             >Wyznacz trasę</a>
           </div>
-          <div class="item md:w-1/3 lg:w-1/4">
-            <h3 class="footer-heading">Godziny otwarcia:</h3>
-            <div class="flex flex-col md:flex-row">
-              <ul>
-                <li>pon.: {{ section.hoursMonday || closedMessage }}</li>
-                <li>wt.: {{ section.hoursTuesday || closedMessage }}</li>
-                <li>śr.: {{ section.hoursWednesday || closedMessage }}</li>
-                <li>czw.: {{ section.hoursThursday || closedMessage }}</li>
-              </ul>
-              <ul class="md:ml-6">
-                <li>pt.: {{ section.hoursFriday || closedMessage }}</li>
-                <li>sob.: {{ section.hoursSaturday || closedMessage }}</li>
-                <li>niedz.: {{ section.hoursSunday || closedMessage }}</li>
-              </ul>
-            </div>
-          </div>
         </div>
       </div>
       <span class="block text-right">
@@ -85,8 +84,13 @@ export default {
 .item {
   @apply flex flex-col mb-4;
 }
-.item:last-child {
-  @apply mb-0;
+li {
+  @apply flex;
+}
+.day {
+  @apply mr-4;
+  display: block;
+  min-width: 50px;
 }
 .footer-heading {
   @apply font-serif text-lg font-semibold mt-4 mb-2;

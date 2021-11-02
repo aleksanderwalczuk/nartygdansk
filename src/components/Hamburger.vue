@@ -100,7 +100,7 @@ $nav_height: 54px;
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  transition: background-color 0.1s 0.2s ease-in-out;
+  transition: all 0.1s 0.2s ease-in-out;
 }
 
 .hamburger__inner::before,

@@ -33,7 +33,7 @@ onMounted(async () => {
   -moz-osx-font-smoothing: grayscale;
 }
 .wrapper {
-  @apply flex flex-col min-h-screen font-serif pt-6;
+  @apply flex flex-col min-h-screen font-serif;
 }
 .container {
   max-width: 1180px;
@@ -56,7 +56,7 @@ onMounted(async () => {
   opacity: 0;
 }
 .btn {
-  @apply bg-red-500 text-lg font-serif text-white py-2 px-4 rounded border border-red-400 transition-colors duration-300 hover:bg-red-400;
+  @apply bg-red-500 text-lg font-medium font-serif text-white py-2 px-4 rounded border border-red-400 transition-colors duration-300 hover:bg-red-400;
 }
 .btn-lg {
   @apply px-8;

@@ -13,7 +13,7 @@ export default {
       open: false,
       title: "Post title",
       exerpt: computed(() => {
-        return this.fetched.content.substring(0, 40) + "...";
+        return this.fetched.content.substring(0, 55) + "...";
       })
     };
   },
@@ -32,7 +32,7 @@ export default {
 }
 </script>
 <template>
-  <figure class="shadow-sm rounded-lg border p-4 mb-12 md:w-1/3 max-w-xs">
+  <figure class="shadow-sm rounded-lg border p-4 mb-12 md:w-1/3 max-w-[300px] mx-auto" @click.self="toggle">
     <datocms-image :data="fetched.image.responsiveImage" class="max-h-[150px]" />
     <h3 v-if="fetched.title" class="font-sans text-lg mt-2 mb-1">{{ fetched.title }}</h3>
     <figcaption>

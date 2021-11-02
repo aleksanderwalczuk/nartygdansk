@@ -6,8 +6,6 @@ import Terms from '../components/Terms.vue';
 import Contact from '../components/Contact.vue';
 import VueEasyLightbox from 'vue-easy-lightbox' // work
 
-import Store from '../store';
-
 export default {
 
   data() {

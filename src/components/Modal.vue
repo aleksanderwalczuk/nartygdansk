@@ -18,22 +18,24 @@ export default {
 }
 </script>
 <template>
-  <div v-if="onOpen" class="modal" @click.self="toggle">
-    <div class="modal-wrapper">
-      <div class="modal-content">
-        <div class="modal-header">
-          <slot name="header" />
-          <button class="modal-btn" @click="toggle">
-            <span class="line" />
-            <span class="line" />
-          </button>
-        </div>
-        <div class="modal-body">
-          <slot name="body" />
+  <transition name="fade" :duration="200" appear>
+    <div v-if="onOpen" class="modal" @click.self="toggle">
+      <div class="modal-wrapper">
+        <div class="modal-content">
+          <div class="modal-header">
+            <slot name="header" />
+            <button class="modal-btn" @click="toggle">
+              <span class="line" />
+              <span class="line" />
+            </button>
+          </div>
+          <div class="modal-body">
+            <slot name="body" />
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </transition>
 </template>
 <style scoped>
 .modal {
@@ -64,7 +66,6 @@ export default {
   .modal-wrapper {
     @apply max-w-2xl;
     max-height: 50vh;
-    
   }
 }
 </style>
