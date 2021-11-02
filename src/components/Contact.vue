@@ -75,22 +75,23 @@ export default {
           <div class="item md:w-1/3 lg:w-1/4">
             <h3 class="footer-heading">Kontakt:</h3>
             <ul class="mb-4 flex-grow">
-              <li>
+              <li v-if="section.phonePrimary">
                 tel:&nbsp;
-                <a href="tel:0048000000000">508 485 690</a>
+                <a :href="`tel:${section.phonePrimary}`">{{section.phonePrimary}}</a>
               </li>
-              <li>
+              <li v-if="section.phoneSecondary">
                 tel:&nbsp;
-                <a href="tel:0048000000000">58 554 72 07</a>
+                <a :href="`tel:${section.phoneSecondary}`">{{section.phoneSecondary}}</a>
               </li>
             </ul>
-            <a href class="btn self-start">Zadzwoń teraz</a>
+            <a v-if="section.phonePrimary" :href="`tel:${section.phonePrimary}`" class="btn self-start">Zadzwoń teraz</a>
+            <a v-else-if="section.phoneSecondary" :href="`tel:${section.phoneSecondary}`" class="btn self-start">Zadzwoń teraz</a>
           </div>
           <div class="item md:w-1/3 lg:w-1/4">
             <h3 class="footer-heading">Adres:</h3>
             <address class="flex flex-col mb-4 not-italic flex-grow">
-              <span>Kazimierza Górskiego 1</span>
-              <span>80-336 Gdańsk</span>
+              <span>{{section.street}}</span>
+              <span>{{section.postcodeCity}}</span>
               <span>Polska</span>
             </address>
             <a

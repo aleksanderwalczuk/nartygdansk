@@ -65,6 +65,7 @@ export const ALL_IN_ONE_QUERY = `query AllInOne {
   }
   term {
     terms
+    visible
   }
   hero {
     title

@@ -14,7 +14,7 @@ export default {
 }
 </script>
 <template>
-  <section v-if="terms" class="section bg-gray-100" id="terms">
+  <section v-if="terms &&terms.visible" class="section bg-gray-100" id="terms">
     <div class="container px-4">
       <h2 class="section-title">Komis - warunki przyjęcia sprzętu</h2>
       <div class="pt-4 rendered-content" v-html="terms.terms"></div>
@@ -50,7 +50,8 @@ export default {
   .rendered-content ol {
     @apply list-decimal pl-6;
   }
-  .rendered-content strong,b {
+  .rendered-content strong,
+  b {
     @apply font-semibold;
   }
 }

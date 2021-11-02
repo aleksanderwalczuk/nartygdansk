@@ -41,7 +41,7 @@ export default {
   @apply text-2xl text-red-500;
 }
 .links {
-  @apply font-serif text-lg hidden sm:block;
+  @apply font-serif text-lg hidden md:block;
 }
 .links a {
   @apply text-red-600 font-medium px-2 mx-2;
