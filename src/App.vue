@@ -46,12 +46,10 @@ onMounted(async () => {
 .section-title {
   @apply font-sans text-3xl text-center mb-8;
 }
-
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s ease;
 }
-
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
@@ -61,5 +59,10 @@ onMounted(async () => {
 }
 .btn-lg {
   @apply px-8;
+}
+@screen lg {
+  .wrapper .container {
+    @apply px-12;
+  }
 }
 </style>
