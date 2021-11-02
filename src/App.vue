@@ -20,10 +20,11 @@ onMounted(async () => {
 
 <template>
   <Header />
-  <transition name="fade" :duration="{ enter: 500, leave: 800 }">
+  <transition name="fade" :duration="{ enter: 500, leave: 250 }">
     <div v-if="Store.state.loaded" class="wrapper">
       <Home />
     </div>
+    <Loader v-else />
   </transition>
 </template>
 

@@ -46,7 +46,7 @@ export default {
         />
       </div>
       <div class="content">
-        <div class="w-full py-4">
+        <div class="w-full pb-4">
           <h2 class="text-4xl font-sans text-red-500 mb-8">{{ section.title }}</h2>
           <p class>{{ section.subtitle }}</p>
         </div>

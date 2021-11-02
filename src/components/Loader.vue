@@ -8,17 +8,12 @@ export default {
       Logo
     }
   },
-  props: {
-    loaded: {
-      type: Boolean,
-      default: false,
-    },
-  },
 }
 </script>
 
-<template v-if="loaded !== true">
-  <div class="flex min-h-full w-full items-center justify-center">
+<template>
+  <div class="flex flex-col min-h-full w-full items-center justify-center px-4">
     <img :src="Logo" alt />
+    <p class="font-serif">Wczytuję...</p>
   </div>
 </template>
