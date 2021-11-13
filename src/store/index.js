@@ -50,7 +50,7 @@ const store = {
   },
 
   toggleLoaded() {
-    this.loaded =  !this.loaded
+    this.state.loaded =  !this.state.loaded
   },
 
   toggleScrollLock(debug) {
