@@ -53,7 +53,7 @@ export default {
           <p class>{{ section.subtitle }}</p>
         </div>
         <div class="flex justify-center items-center mb-4">{{ isTodayOpen }}</div>
-        <a href="tel:508485690" class="btn btn-lg mx-auto lg:mb-8">Zadzwoń</a>
+        <a href="tel:508485690" class="btn btn-lg mx-auto lg:mb-8 inline-block">Zadzwoń</a>
       </div>
     </div>
   </section>
